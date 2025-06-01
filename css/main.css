@@ -3,6 +3,10 @@ body {
     background-color: #FFF8F0;
 }
 
+.header{
+    background-color: #fff5e9; /* Light cream background */
+}
+
 .menu-item-card {
     background-color: #FFFFFF;
     border-radius: 12px;
@@ -22,6 +26,7 @@ body {
 .brand-gradient {
     background: linear-gradient(to right, #FF8C00, #FFA500); /* Orange gradient */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .japanese-name {

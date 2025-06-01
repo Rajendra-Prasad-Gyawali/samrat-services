@@ -27,5 +27,5 @@ function setFooterYear() {
 }
 
 // Load header and footer, and setup menu logic
-loadHTML("header", "header.html", setupMenuToggle);
-loadHTML("footer", "footer.html", setFooterYear);
+loadHTML("header", "./common/header.html", setupMenuToggle);
+loadHTML("footer", "./common/footer.html", setFooterYear);
