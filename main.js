@@ -21,6 +21,11 @@ function setupMenuToggle() {
       });
 }
 
+function setFooterYear() {
+  const year = new Date().getFullYear();
+  document.getElementById("footer-year").textContent = year;
+}
+
 // Load header and footer, and setup menu logic
 loadHTML("header", "header.html", setupMenuToggle);
-loadHTML("footer", "footer.html");
+loadHTML("footer", "footer.html", setFooterYear);
