@@ -21,10 +21,36 @@ function setupMenuToggle() {
       });
 }
 
+function updateLanguageLinks() {
+  // Dynamically set language switch links
+    const basePath = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+      ? ""
+      : "/samrat-services";
+
+    let currentPage = window.location.pathname.split("/").pop() || "index.html";
+    if (!currentPage.includes(".")) currentPage += "index.html";
+
+    document.querySelectorAll("a.lang-link").forEach(link => {
+      const lang = link.dataset.lang;
+      if(lang === "en"){
+        link.href = `${basePath}/${lang}/${currentPage}`;
+        return;
+      }else{
+        link.href = `${basePath}/${currentPage}`;
+      }
+    });
+}
+
 function setFooterYear() {
   const year = new Date().getFullYear();
   document.getElementById("footer-year").textContent = year;
 }
 
-loadHTML("header", "./common/header.html", setupMenuToggle);
+//loadHTML("header", "./common/header.html", setupMenuToggle);
+// Load header, setup menu, and update lang links
+loadHTML("header", "./common/header.html", () => {
+  setupMenuToggle();
+  updateLanguageLinks();
+});
+
 loadHTML("footer", "./common/footer.html", setFooterYear);
