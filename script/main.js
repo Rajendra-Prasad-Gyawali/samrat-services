@@ -46,7 +46,6 @@ function setFooterYear() {
   document.getElementById("footer-year").textContent = year;
 }
 
-//loadHTML("header", "./common/header.html", setupMenuToggle);
 // Load header, setup menu, and update lang links
 loadHTML("header", "./common/header.html", () => {
   setupMenuToggle();
